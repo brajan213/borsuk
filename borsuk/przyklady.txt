@@ -1,0 +1,74 @@
+1. Podstawy zmiennych i operatorów
+let a = 10;
+let b = 3;
+print("Dodawanie: ${a+b}");
+print("Mnożenie: ${a*b}");
+a += 5;
+print("a po += 5: ", a);
+
+2. Funkcje
+func silnia(n) {
+  if n <= 1 { return 1; }
+  return n * silnia(n-1);
+}
+
+print("Silnia 5: ", silnia(5)); // 120
+
+3. Pętle
+for (let i in range(0, 5)) {
+  print("i=", i);
+}
+
+let j = 0;
+while j < 3 {
+  print("j=", j);
+  j += 1;
+}
+
+4. Tablice i mapy
+let arr = [1,2,3];
+push(arr, 4);
+print("Tablica:", arr);
+print("Pop:", pop(arr));
+
+let osoba = {"imie": "Ala", "wiek": 20};
+print("Klucze:", keys(osoba));
+print("Wiek:", get(osoba, "wiek"));
+set(osoba, "wiek", 21);
+print("Nowy wiek:", osoba["wiek"]);
+
+5. Klasy i obiekty
+class Osoba {
+  func init(imie, wiek) { 
+    this.imie = imie; 
+    this.wiek = wiek; 
+  }
+  func hello() { 
+    print("Cześć, jestem ${this.imie}, mam ${this.wiek} lat."); 
+  }
+}
+
+let p = new Osoba("Bartek", 30);
+p.hello();
+p.wiek += 1;
+print("Nowy wiek: ", p.wiek);
+
+6. Moduły (import)
+
+math.bk
+
+func kwadrat(x) { return x*x; }
+
+
+main.bk
+
+import "math.bk";
+print("Kwadrat 7: ", kwadrat(7));
+
+7. Wbudowane funkcje map/filter
+let arr = [1,2,3,4,5];
+let podwojone = map(arr, func(x) { return x*2; });
+print("Podwojone:", podwojone);
+
+let parzyste = filter(arr, func(x) { return x % 2 == 0; });
+print("Parzyste:", parzyste);

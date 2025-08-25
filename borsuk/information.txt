@@ -1,0 +1,116 @@
+# Dokumentacja języka programowania Borsuk
+
+## 1. Typy danych
+
+- int - liczby całkowite (1, 42, -7)
+- number - liczby zmiennoprzecinkowe (3.14, 2.0)
+- string - tekst ("hello")
+- bool - true / false
+- array - lista ((1,2,3))
+- map - słownik ({"a": 1, "b": 2})
+- object - instancja klasy
+- null - brak wartości
+
+## 2. Zmienne
+
+Zmienne definiujemy słowem kluczowym `let`:
+
+let x = 10;
+let y = "tekst";
+
+## 3. Operatory
+
+- Arytmetyczne: + - * / %
+- Porównania: == != < <= > >=
+- Logiczne: and or not
+- Przypisania: = += -= *= /= %=
+
+## 4. Funkcje
+
+func suma(a, b) {
+    return a + b;
+}
+print(suma(3,4)); // 7
+
+## 5. Instrukcje warunkowe
+
+if x > 5 {
+    print('duże');
+    } else {
+    print('małe');
+}
+
+## 6. Pętle
+
+let i = 0;
+while i < 3 {
+    print(i);
+    i += 1;
+}
+
+for (let j in range(0,5)) {
+    print(j);
+}
+
+## 7. Tablice i mapy
+
+let arr = [1,2,3];
+push(arr, 4);
+print(pop(arr)); // 4
+
+let m = {'a': 1, 'b': 2};
+print(keys(m)); // ['a','b']
+print(values(m)); // [1,2]
+set(m, 'c', 3);
+print(get(m,"c")); // 3
+
+## 8. Klasy i obiekty
+
+class Osoba {
+func init(imie, wiek) { this.imie = imie; this.wiek = wiek; }
+func hello() { print("Cześć, ${this.imie}! (${this.wiek})"); }
+}
+
+let p = new Osoba("Ala", 20);
+p.hello(); // Cześć, Ala! (20)
+p.wiek += 1;
+print(p.wiek); // 21
+
+## 9. Interpolacja napisów
+
+let x = 5;
+print("Wynik: ${x^2}"); // Wynik: 25
+
+## 10. Moduły
+
+// plik math.bk
+func kwadrat(x) { return x*x; }
+
+// plik main.bk
+import "math.bk";
+print(kwadrat(5)); // 25
+
+## 11. Wbudowane funkcje
+
+- print(...) - wypisuje wartości
+- len(x) - długość tablicy/mapy/stringa
+- range(a,b) - zwraca tablicę [a..b-1]
+- type(x) - typ zmiennej
+- keys(map), values(map)
+- push(arr,x), pop(arr)
+- str(x), num(x)
+- join(arr, sep), split(str, sep)
+- map(arr, func), filter(arr, func)
+- get(map,key), set(map,key,val)
+- readline() - pobiera linię tekstu
+
+## 12. Kontrola przepływu
+
+- break - przerywa pętlę
+- continue - przechodzi do następnej iteracji
+- return - zwraca wartość z funkcji
+
+# Podsumowanie
+
+Borsuk to dynamiczny, lekki język programowania z funkcjami, klasami, modułami, string interpolation i wbudowanymi kolekcjami. Między prostotą Pythona i trochę składni C,
+ale jest własny i łatwy do rozszerzania.
